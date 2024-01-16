@@ -71,6 +71,7 @@ function insertarDatos(){
 
 insertarDatos();
 ```
+``load('funcion.js')``
 - Intentar insertar un documento con clave repetida (qué di a consola?, o permite?)
 ``MongoBJkWriteError: duplicate key``
 - Mostrar todos os documentos
