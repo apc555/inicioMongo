@@ -73,13 +73,13 @@ insertarDatos();
 ```
 ``load('funcion.js')``
 - Intentar insertar un documento con clave repetida (qué di a consola?, o permite?)
-``MongoBJkWriteError: duplicate key``
+``MongoServerError: E11000 duplicate key error collection: libros.libros index: _id_ dup key: { _id: 1 } // Non o permite``
 - Mostrar todos os documentos
 ``db.libros.find()``
 - Agrega unha colección chamada "posts" e inserta 1 documento cunha estructura calquera
-``use posts``
+``db.createDatabase("posts")``
 - Cantas bbdd podes visualizar agora mesmo?
-``Dúas.``
+``show collections //Dúas.``
 - Elimina a coleción chamada "posts"
 ``db.posts.drop()``
 - Crea outra bbdd chamada borrar, introdúcelle un dato calquera
@@ -152,11 +152,11 @@ db.artigos.insertOne(
 
 ### Utilización de comparadores
 - Imprime todos os datos da bbdd creada
-db.artigos.find()
+``db.artigos.find()``
 - Imprimir todos os artigos que pertencen ou rubro de 'mouse'.
-db.artigos.find({rubro: 'mouse})
+``db.artigos.find({rubro: 'mouse'})``
 - Imprimir todos os artigos cun precio maior o igual a 5000.
-db.artigos.find({precio: {$gte: 5000}})
+``db.artigos.find({precio: {$gte: 5000}})``
 - Imprimir todas as impresoras que teñen un precio maior ou igual a 3500.
 ```
 db.artigos.find({
